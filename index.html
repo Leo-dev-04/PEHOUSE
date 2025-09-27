@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PEHOUSE - Adopción de Mascotas</title>
+    <meta name="description" content="Conectamos albergues y veterinarios con familias que buscan adoptar mascotas">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <i class="fas fa-paw"></i>
+                <span>PEHOUSE</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#mascotas" class="nav-link">Mascotas</a></li>
+                <li><a href="#registro" class="nav-link">Registro</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Conectamos corazones con mascotas</h1>
+                <p class="hero-description">
+                    PEHOUSE es la plataforma que une albergues, veterinarios y familias 
+                    para dar una segunda oportunidad a las mascotas que buscan un hogar lleno de amor.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#mascotas" class="btn btn-primary">Ver Mascotas</a>
+                    <a href="#registro" class="btn btn-secondary">Registrar Organización</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <i class="fas fa-heart hero-icon"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">¿Cómo funciona PEHOUSE?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Albergues y Veterinarios</h3>
+                    <p>Registra tu organización y publica las mascotas disponibles para adopción</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Familias Adoptivas</h3>
+                    <p>Encuentra la mascota perfecta para tu familia con nuestro sistema de búsqueda</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Conexión Directa</h3>
+                    <p>Conectamos directamente adoptantes con organizaciones sin intermediarios</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pets Section -->
+    <section id="mascotas" class="pets">
+        <div class="container">
+            <h2 class="section-title">Mascotas disponibles para adopción</h2>
+            <div class="pets-filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="perros">Perros</button>
+                <button class="filter-btn" data-filter="gatos">Gatos</button>
+                <button class="filter-btn" data-filter="otros">Otros</button>
+            </div>
+            <div class="pets-grid" id="petsGrid">
+                <!-- Pet cards will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registro" class="registration">
+        <div class="container">
+            <h2 class="section-title">Registra tu organización</h2>
+            <div class="registration-content">
+                <div class="registration-info">
+                    <h3>¿Eres un albergue o veterinario?</h3>
+                    <p>Únete a PEHOUSE y ayuda a encontrar hogares para más mascotas:</p>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check"></i> Registro gratuito</li>
+                        <li><i class="fas fa-check"></i> Gestión fácil de mascotas</li>
+                        <li><i class="fas fa-check"></i> Conexión directa con adoptantes</li>
+                        <li><i class="fas fa-check"></i> Panel de control personalizado</li>
+                    </ul>
+                </div>
+                <form class="registration-form" id="registrationForm">
+                    <div class="form-group">
+                        <label for="orgName">Nombre de la Organización</label>
+                        <input type="text" id="orgName" name="orgName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orgType">Tipo de Organización</label>
+                        <select id="orgType" name="orgType" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="albergue">Albergue</option>
+                            <option value="veterinario">Veterinario</option>
+                            <option value="rescatista">Rescatista Independiente</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactName">Nombre del Contacto</label>
+                        <input type="text" id="contactName" name="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Dirección</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Registrar Organización</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@pehouse.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Calle Principal 123, Ciudad</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="contactFullName">Nombre Completo</label>
+                        <input type="text" id="contactFullName" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Correo Electrónico</label>
+                        <input type="email" id="contactEmail" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-paw"></i>
+                    <span>PEHOUSE</span>
+                </div>
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#mascotas">Mascotas</a></li>
+                        <li><a href="#registro">Registro</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PEHOUSE. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
